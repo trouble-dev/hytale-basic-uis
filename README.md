@@ -1,31 +1,31 @@
 # TestUIPlugin
 
-Ein Hytale Server Plugin zur Demonstration von Custom UI Pages. Das Projekt dient als Lernressource für die Entwicklung eigener UI-Oberflächen im Hytale-Ökosystem.
+A Hytale Server plugin demonstrating Custom UI Pages. This project serves as a learning resource for developing custom UI interfaces in the Hytale ecosystem.
 
 ## Features
 
-- **Demo-Seiten**: Verschiedene UI-Muster (Dialoge, Formulare, Info-Panels)
-- **Progressives Tutorial**: Drei Schwierigkeitsstufen (statisch → interaktiv → dynamisch)
-- **Ausführliche Dokumentation**: Schritt-für-Schritt-Anleitung in [TUTORIAL.md](TUTORIAL.md)
+- **Demo Pages**: Various UI patterns (dialogs, forms, info panels)
+- **Progressive Tutorial**: Three difficulty levels (static → interactive → dynamic)
+- **Comprehensive Documentation**: Step-by-step guide in [TUTORIAL.md](TUTORIAL.md)
 
-## Voraussetzungen
+## Requirements
 
 - Java 21
 - Gradle 8.13+
-- HytaleServer.jar im `libs/` Ordner
+- HytaleServer.jar in the `libs/` folder
 
-## Projektstruktur
+## Project Structure
 
 ```
 src/main/java/de/noel/testui/
-├── TestUIPlugin.java          # Hauptklasse
-├── commands/                   # Command-Implementierungen
-├── pages/                      # UI-Seiten
-└── tutorial/                   # Tutorial-Level 1-3
+├── TestUIPlugin.java          # Main plugin class
+├── commands/                   # Command implementations
+├── pages/                      # UI pages
+└── tutorial/                   # Tutorial levels 1-3
 
 src/main/resources/
-├── manifest.json              # Plugin-Metadaten
-└── Common/UI/Custom/Pages/    # UI-Definitionsdateien (.ui)
+├── manifest.json              # Plugin metadata
+└── Common/UI/Custom/Pages/    # UI definition files (.ui)
 ```
 
 ## Build
@@ -34,31 +34,31 @@ src/main/resources/
 ./gradlew build
 ```
 
-Das fertige Plugin liegt unter `build/libs/TestUIPlugin-1.0.0.jar`.
+The compiled plugin will be located at `build/libs/TestUIPlugin-1.0.0.jar`.
 
 ## Installation
 
-1. `TestUIPlugin-1.0.0.jar` in das Plugins-Verzeichnis des Hytale-Servers kopieren
-2. Den Inhalt von `src/main/resources/Common/` in das entsprechende Server-Verzeichnis kopieren
+1. Copy `TestUIPlugin-1.0.0.jar` to your Hytale server's plugins directory
+2. Copy the contents of `src/main/resources/Common/` to the corresponding server directory
 
 ## Commands
 
-| Command | Beschreibung |
-|---------|--------------|
-| `/testui` | Einfache Test-Seite |
-| `/dialog` | Gestylter Dialog mit Buttons |
-| `/form` | Formular mit Eingabefeldern |
-| `/info` | Info-Panel mit dynamischen Werten |
-| `/helloworld` | Minimales Beispiel |
-| `/tutorial1` | Tutorial: Statische Anzeige |
-| `/tutorial2` | Tutorial: Interaktive Elemente |
-| `/tutorial3` | Tutorial: Dynamische Werte |
+| Command | Description |
+|---------|-------------|
+| `/testui` | Simple test page |
+| `/dialog` | Styled dialog with buttons |
+| `/form` | Form with input fields |
+| `/info` | Info panel with dynamic values |
+| `/helloworld` | Minimal example |
+| `/tutorial1` | Tutorial: Static display |
+| `/tutorial2` | Tutorial: Interactive elements |
+| `/tutorial3` | Tutorial: Dynamic values |
 
-## Architektur
+## Architecture
 
-### Page-Typen
+### Page Types
 
-**BasicCustomUIPage** - Für einfache, statische Seiten:
+**BasicCustomUIPage** - For simple, static pages:
 ```java
 public class MyPage extends BasicCustomUIPage {
     @Override
@@ -68,7 +68,7 @@ public class MyPage extends BasicCustomUIPage {
 }
 ```
 
-**InteractiveCustomUIPage** - Für Seiten mit Event-Handling:
+**InteractiveCustomUIPage** - For pages with event handling:
 ```java
 public class MyPage extends InteractiveCustomUIPage<MyEventData> {
     @Override
@@ -79,21 +79,21 @@ public class MyPage extends InteractiveCustomUIPage<MyEventData> {
 
     @Override
     public void handleDataEvent(MyEventData data) {
-        // Event verarbeiten
+        // Handle event
     }
 }
 ```
 
-### Event-Daten mit Codec
+### Event Data with Codec
 
 ```java
 public record MyEventData(String playerName) {
     public static final Codec<MyEventData> CODEC = BuilderCodec.of(MyEventData::new)
-        .with("@PlayerName", MyEventData::playerName)  // @ = UI-Input-Binding
+        .with("@PlayerName", MyEventData::playerName)  // @ = UI input binding
         .build();
 }
 ```
 
-## Lizenz
+## License
 
-Dieses Projekt dient ausschließlich zu Lernzwecken.
+This project is for educational purposes only.
