@@ -1,0 +1,47 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+
+# IDE - IntelliJ
+.idea/
+*.iml
+out/
+
+# IDE - Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# IDE - VS Code
+.vscode/
+
+# IDE - NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+
+# Dependencies (HytaleServer.jar should not be committed)
+libs/
+
+# Assets (too large, not needed in repo)
+Assets/
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# Local configuration
+local.properties

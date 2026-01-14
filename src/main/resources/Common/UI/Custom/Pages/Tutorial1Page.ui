@@ -1,0 +1,24 @@
+Group {
+    Anchor: (Width: 400, Height: 200);
+    Background: #1a1a2e(0.95);
+    LayoutMode: Top;
+    Padding: (Full: 20);
+
+    Label #Title {
+        Text: "Tutorial Level 1";
+        Anchor: (Height: 40);
+        Style: (FontSize: 24, TextColor: #ffffff, Alignment: Center);
+    }
+
+    Label #Subtitle {
+        Text: "Static Display - No Events";
+        Anchor: (Height: 30);
+        Style: (FontSize: 16, TextColor: #888888, Alignment: Center);
+    }
+
+    Label #Info {
+        Text: "Press ESC to close";
+        Anchor: (Height: 25);
+        Style: (FontSize: 14, TextColor: #666666, Alignment: Center);
+    }
+}

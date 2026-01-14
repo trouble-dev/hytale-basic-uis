@@ -1,0 +1,47 @@
+$C = "../Common.ui";
+
+@GreetButtonStyle = TextButtonStyle(
+    Default: (Background: #3a7bd5, LabelStyle: (FontSize: 16, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Hovered: (Background: #4a8be5, LabelStyle: (FontSize: 16, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Pressed: (Background: #2a6bc5, LabelStyle: (FontSize: 16, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+Group {
+    Anchor: (Width: 400, Height: 280);
+    Background: #1a1a2e(0.95);
+    LayoutMode: Top;
+    Padding: (Full: 20);
+
+    Label #Title {
+        Text: "Tutorial Level 2";
+        Anchor: (Height: 40);
+        Style: (FontSize: 24, TextColor: #ffffff, HorizontalAlignment: Center);
+    }
+
+    Label #Subtitle {
+        Text: "Events - TextField + Button";
+        Anchor: (Height: 25);
+        Style: (FontSize: 14, TextColor: #888888, HorizontalAlignment: Center);
+    }
+
+    Group { Anchor: (Height: 10); }
+
+    Label #Prompt {
+        Text: "Enter your name:";
+        Anchor: (Height: 25);
+        Style: (FontSize: 16, TextColor: #cccccc);
+    }
+
+    $C.@TextField #NameInput {
+        Anchor: (Height: 40);
+        PlaceholderText: "Type your name here...";
+    }
+
+    Group { Anchor: (Height: 10); }
+
+    TextButton #GreetButton {
+        Anchor: (Height: 45);
+        Text: "Greet Me!";
+        Style: @GreetButtonStyle;
+    }
+}

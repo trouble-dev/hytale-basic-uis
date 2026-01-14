@@ -1,0 +1,7 @@
+{
+  "Group": "TestUI",
+  "Name": "TestUIPlugin",
+  "Version": "1.0.0",
+  "Main": "de.noel.testui.TestUIPlugin",
+  "IncludesAssetPack": true
+}

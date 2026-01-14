@@ -1,0 +1,28 @@
+Group {
+  Anchor: (Width: 400, Height: 250);
+  Background: #1a1a2e(0.95);
+  LayoutMode: Top;
+  Padding: (Full: 20);
+
+  Label #Title {
+    Text: "Hello World";
+    Anchor: (Height: 40);
+    Style: (FontSize: 24, TextColor: #ffffff, Alignment: Center);
+  }
+
+  Label #Message {
+    Text: "My first Hytale UI!";
+    Anchor: (Height: 30);
+    Style: (FontSize: 16, TextColor: #b4c8c9, Alignment: Center);
+  }
+
+  Group {
+    Anchor: (Height: 20);
+  }
+
+  Label #Info {
+    Text: "Press ESC to close";
+    Anchor: (Height: 20);
+    Style: (FontSize: 12, TextColor: #666666, Alignment: Center);
+  }
+}

@@ -1,0 +1,124 @@
+$C = "../Common.ui";
+
+@PrimaryButtonStyle = TextButtonStyle(
+  Default: (Background: #3a7bd5, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Hovered: (Background: #4a8be5, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Pressed: (Background: #2a6bc5, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+@CancelButtonStyle = TextButtonStyle(
+  Default: (Background: #8b3a3a, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Hovered: (Background: #9b4a4a, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+  Pressed: (Background: #7b2a2a, LabelStyle: (FontSize: 14, TextColor: #ffffff, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+Group {
+  Anchor: (Width: 480, Height: 380);
+  Background: #141c26(0.98);
+  LayoutMode: Top;
+  Padding: (Full: 20);
+
+  Label {
+    Text: "Settings";
+    Anchor: (Height: 45);
+    Style: (
+      FontSize: 26,
+      TextColor: #ffffff,
+      HorizontalAlignment: Center,
+      RenderBold: true
+    );
+  }
+
+  Group {
+    Anchor: (Height: 1);
+    Background: #2b3542;
+  }
+
+  Group { Anchor: (Height: 16); }
+
+  Group {
+    LayoutMode: Left;
+    Anchor: (Height: 44);
+
+    Label {
+      Text: "Player Name";
+      Anchor: (Width: 130);
+      Style: (FontSize: 14, TextColor: #96a9be, VerticalAlignment: Center);
+    }
+
+    $C.@TextField #NameInput {
+      FlexWeight: 1;
+      PlaceholderText: "Enter name...";
+    }
+  }
+
+  Group { Anchor: (Height: 12); }
+
+  Group {
+    LayoutMode: Left;
+    Anchor: (Height: 44);
+
+    Label {
+      Text: "Speed";
+      Anchor: (Width: 130);
+      Style: (FontSize: 14, TextColor: #96a9be, VerticalAlignment: Center);
+    }
+
+    $C.@NumberField #SpeedInput {
+      Anchor: (Width: 100);
+      Value: 100;
+    }
+  }
+
+  Group { Anchor: (Height: 20); }
+
+  Group {
+    Anchor: (Height: 1);
+    Background: #2b3542(0.5);
+  }
+
+  Group { Anchor: (Height: 16); }
+
+  Label {
+    Text: "OPTIONS";
+    Anchor: (Height: 20);
+    Style: (FontSize: 11, TextColor: #4a5568, LetterSpacing: 2);
+  }
+
+  Group { Anchor: (Height: 8); }
+
+  $C.@CheckBoxWithLabel #NotifyOption {
+    @Text = "Enable notifications";
+    @Checked = true;
+    Anchor: (Height: 28);
+  }
+
+  Group { Anchor: (Height: 6); }
+
+  $C.@CheckBoxWithLabel #CoordsOption {
+    @Text = "Show coordinates";
+    @Checked = false;
+    Anchor: (Height: 28);
+  }
+
+  Group { FlexWeight: 1; }
+
+  Group {
+    LayoutMode: Center;
+    Anchor: (Height: 44);
+
+    TextButton #SaveButton {
+      Text: "SAVE";
+      Anchor: (Width: 110, Height: 40);
+      Style: @PrimaryButtonStyle;
+    }
+
+    Group { Anchor: (Width: 16); }
+
+    TextButton #CancelButton {
+      Text: "CANCEL";
+      Anchor: (Width: 110, Height: 40);
+      Style: @CancelButtonStyle;
+    }
+  }
+}

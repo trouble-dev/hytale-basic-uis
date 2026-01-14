@@ -1,0 +1,137 @@
+@CloseButtonStyle = TextButtonStyle(
+    Default: (Background: #2b3542, LabelStyle: (FontSize: 13, TextColor: #96a9be, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Hovered: (Background: #3b4552, LabelStyle: (FontSize: 13, TextColor: #b6c9de, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center)),
+    Pressed: (Background: #1b2532, LabelStyle: (FontSize: 13, TextColor: #96a9be, RenderBold: true, HorizontalAlignment: Center, VerticalAlignment: Center))
+);
+
+Group {
+    Anchor: (Width: 500, Height: 320);
+    LayoutMode: Left;
+
+    Group #LeftPanel {
+        Anchor: (Width: 150);
+        Background: #0a1119(0.95);
+        LayoutMode: Top;
+        Padding: (Full: 16);
+
+        Label {
+            Text: "TUTORIAL 3";
+            Anchor: (Height: 25);
+            Style: (FontSize: 11, TextColor: #4a5568, RenderUppercase: true, LetterSpacing: 2);
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Label {
+            Text: "> Dashboard";
+            Anchor: (Height: 30);
+            Style: (FontSize: 14, TextColor: #ffffff, RenderBold: true);
+        }
+
+        Label {
+            Text: "  Settings";
+            Anchor: (Height: 30);
+            Style: (FontSize: 14, TextColor: #6e7da1);
+        }
+
+        Label {
+            Text: "  About";
+            Anchor: (Height: 30);
+            Style: (FontSize: 14, TextColor: #6e7da1);
+        }
+    }
+
+    Group #RightPanel {
+        FlexWeight: 1;
+        Background: #141c26(0.98);
+        LayoutMode: Top;
+        Padding: (Full: 20);
+
+        Label {
+            Text: "Server Dashboard";
+            Anchor: (Height: 40);
+            Style: (FontSize: 22, TextColor: #ffffff, RenderBold: true);
+        }
+
+        Group {
+            Anchor: (Height: 1);
+            Background: #2b3542;
+        }
+
+        Group { Anchor: (Height: 16); }
+
+        Label {
+            Text: "Dynamic values set from Java:";
+            Anchor: (Height: 25);
+            Style: (FontSize: 13, TextColor: #6e7da1);
+        }
+
+        Group { Anchor: (Height: 8); }
+
+        Group #StatsGrid {
+            LayoutMode: Left;
+            Anchor: (Height: 70);
+
+            Group {
+                FlexWeight: 1;
+                LayoutMode: Top;
+
+                Label #Stat1Value {
+                    Text: "0";
+                    Anchor: (Height: 32);
+                    Style: (FontSize: 26, TextColor: #4a9eff, RenderBold: true);
+                }
+                Label {
+                    Text: "Players";
+                    Anchor: (Height: 18);
+                    Style: (FontSize: 11, TextColor: #6e7da1);
+                }
+            }
+
+            Group {
+                FlexWeight: 1;
+                LayoutMode: Top;
+
+                Label #Stat2Value {
+                    Text: "0";
+                    Anchor: (Height: 32);
+                    Style: (FontSize: 26, TextColor: #4aff7f, RenderBold: true);
+                }
+                Label {
+                    Text: "Quests";
+                    Anchor: (Height: 18);
+                    Style: (FontSize: 11, TextColor: #6e7da1);
+                }
+            }
+
+            Group {
+                FlexWeight: 1;
+                LayoutMode: Top;
+
+                Label #Stat3Value {
+                    Text: "0";
+                    Anchor: (Height: 32);
+                    Style: (FontSize: 26, TextColor: #ffaa4a, RenderBold: true);
+                }
+                Label {
+                    Text: "Uptime";
+                    Anchor: (Height: 18);
+                    Style: (FontSize: 11, TextColor: #6e7da1);
+                }
+            }
+        }
+
+        Group { FlexWeight: 1; }
+
+        Group {
+            LayoutMode: Right;
+            Anchor: (Height: 40);
+
+            TextButton #CloseButton {
+                Text: "CLOSE";
+                Anchor: (Width: 100, Height: 36);
+                Style: @CloseButtonStyle;
+            }
+        }
+    }
+}
